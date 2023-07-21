@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "os_versions",
+  "info": {
+    "singularName": "os-version",
+    "pluralName": "os-versions",
+    "displayName": "OS Version",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "versionName": {
+      "type": "string"
+    }
+  }
+}

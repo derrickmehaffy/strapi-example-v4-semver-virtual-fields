@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "feature_flags",
+  "info": {
+    "singularName": "feature-flag",
+    "pluralName": "feature-flags",
+    "displayName": "Feature Flag",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "featureName": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "minVersion": {
+      "type": "string",
+      "required": true,
+      "regex": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
+    },
+    "osVersions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::os-version.os-version"
+    },
+    "versionMajor": {
+      "type": "integer"
+    },
+    "versionMinor": {
+      "type": "integer"
+    },
+    "versionPatch": {
+      "type": "integer"
+    },
+    "isPrerelease": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "prereleaseData": {
+      "type": "json"
+    }
+  }
+}
